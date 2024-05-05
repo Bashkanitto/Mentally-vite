@@ -41,8 +41,7 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
       >
         <img
           src={isMe ? "/me.png" : `${prompts[promptIndex].img}`}
-          width={30}
-          height={30}
+          className="rounded-full"
           alt="AI avatar"
         />
         {localStorage.getItem("messages") ? (
@@ -73,8 +72,7 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
               <div className="avatar mr-40">
                 <img
                   src={`${prompts[promptIndex].img}`}
-                  width={300}
-                  height={300}
+                  className="rounded-full"
                   alt="choose ai"
                 />
                 <button className="chooseAvatarBtn" onClick={handleChoose}>
@@ -89,7 +87,7 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
                     onClick={() => setPromptIndex(item.id)}
                     key={item.id}
                   >
-                    <img src={item.img} alt="" />
+                    <img className="rounded-full" src={item.img} alt="" />
                   </button>
                 ))}
               </div>

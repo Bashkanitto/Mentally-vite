@@ -19,7 +19,11 @@ const CustomSelect = ({ setPromptIndex, promptIndex, isAuthorized }) => {
         }}
         className="absolute top-[20px] w-[190px] rounded-md flex  items-center gap-2 overflow-hidden left-4 p-1 z-40 text-white"
       >
-        <img src={prompts[promptIndex].img} width={20} />
+        <img
+          className="rounded-full"
+          src={prompts[promptIndex].img}
+          width={20}
+        />
         <p className="text-xs text-nowrap overflow-hidden">
           {prompts[promptIndex].name}
         </p>
@@ -37,7 +41,12 @@ const CustomSelect = ({ setPromptIndex, promptIndex, isAuthorized }) => {
             className="flex items-center gap-2 text-xs cursor-pointer"
             key={item.id}
           >
-            <img src={item.img} width={20} className="w-5" alt={item.name} />
+            <img
+              src={item.img}
+              width={20}
+              className="w-5 rounded-full"
+              alt={item.name}
+            />
             {item.name}
           </div>
         ))}
