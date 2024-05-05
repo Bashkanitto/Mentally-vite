@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import Notification from "../components/Notification.jsx";
 
 function Welcome() {
   const [isModalOpen, setIsModalOpen] = useState();
@@ -10,6 +11,7 @@ function Welcome() {
     if (userInput != "") {
       localStorage.setItem("user", userInput);
       setIsModalOpen(true);
+      Notification;
     }
   };
 
@@ -54,7 +56,7 @@ function Welcome() {
         </form>
       </div>
 
-      <div className="main">
+      <div className="main p-2">
         <button className="introButton">
           Приветствую <ArrowRight />
         </button>

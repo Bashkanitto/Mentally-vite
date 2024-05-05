@@ -47,7 +47,7 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
           className="rounded-full"
           alt="AI avatar"
         />
-        {localStorage.getItem("messages") ? (
+        {localStorage.getItem("animation") == "true" ? (
           <p>{text}</p>
         ) : (
           <span className="text-xs" ref={elRef} />

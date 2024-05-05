@@ -2,7 +2,6 @@ import axios from "axios";
 import { ArrowRight, Mic } from "lucide-react";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Message from "../components/Message";
-import Notification from "../components/Notification.jsx";
 import { prompts } from "../components/prompts.js";
 
 // eslint-disable-next-line react/prop-types
@@ -10,18 +9,37 @@ const Chat = ({ promptIndex, setPromptIndex }) => {
   const [user] = useState(localStorage.getItem("user"));
   const scrollContainerRef = useRef(null);
 
-  const [messages, setMessages] = useState(
-    !localStorage.getItem("messages")
-      ? [
-          {
-            id: 1,
-            isMe: false,
-            text: `Отлично, ${user}! Теперь у меня есть возможность подстроиться под Ваши предпочтения. Выберите мне один из образов, который больше всего Вам подхойдет, и я буду общаться с Вами в этом стиле: `,
-            option: true,
-          },
-        ]
-      : JSON.parse(localStorage.getItem("messages"))
-  );
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    const storedMessages = localStorage.getItem("messages");
+    if (storedMessages) {
+      setMessages(JSON.parse(storedMessages));
+    } else {
+      setMessages([
+        {
+          id: 1,
+          isMe: false,
+          text: `Отлично, ${user}! Теперь у меня есть возможность подстроиться под Ваши предпочтения. Выберите мне один из образов, который больше всего Вам подхойдет, и я буду общаться с Вами в этом стиле: `,
+          option: true,
+        },
+      ]);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      localStorage.setItem("messages", JSON.stringify(messages));
+    };
+
+    // Adding event listener for beforeunload to save messages
+    window.addEventListener("beforeunload", handleBeforeUnload);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
+  }, [messages]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -49,7 +67,6 @@ const Chat = ({ promptIndex, setPromptIndex }) => {
       ...prevMessages,
       { id: prevMessages.length + 1, isMe, option, text },
     ]);
-    localStorage.setItem("messages", JSON.stringify(messages));
   };
 
   useEffect(() => {
@@ -114,7 +131,6 @@ const Chat = ({ promptIndex, setPromptIndex }) => {
           </button>
         </form>
       </div>
-      <Notification />
     </Suspense>
   );
 };
