@@ -23,19 +23,19 @@ const Chat = ({ promptIndex, setPromptIndex }) => {
   );
 
   useEffect(() => {
-    if (promptIndex != 0) {
-      setMessages([
-        {
-          id: 1,
-          isMe: false,
-          text: `Доброго времени суток. Какие сложности или мысли занимают ваш разум сегодня?`,
-        },
-      ]);
-    }
+    setTimeout(() => {
+      if (promptIndex != 0) {
+        setMessages([
+          {
+            id: 1,
+            isMe: false,
+            text: `Доброго времени суток. Какие сложности или мысли занимают ваш разум сегодня?`,
+          },
+        ]);
+      }
+    }, 2000);
   }, [promptIndex]);
 
-  const obj1 = JSON.parse(localStorage.getItem("messages"));
-  console.log(obj1);
   const scrollToBottom = () => {
     const scrollContainer = scrollContainerRef.current;
     if (scrollContainer) {

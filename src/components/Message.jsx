@@ -12,7 +12,10 @@ import { prompts } from "./prompts";
 // eslint-disable-next-line react/prop-types
 const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
   const [optionOpen, setOptionOpen] = useState(true);
+  const [prompt, setPrompt] = useState();
+
   function handleChoose() {
+    setPromptIndex(prompt);
     setOptionOpen(false);
     option = false;
   }
@@ -71,7 +74,7 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
             <>
               <div className="avatar mr-40">
                 <img
-                  src={`${prompts[promptIndex].img}`}
+                  src={`${prompts[prompt].img}`}
                   className="rounded-full"
                   alt="choose ai"
                 />
@@ -81,10 +84,11 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
                 </button>
               </div>
               <div className="grid grid-cols-2 gap-10">
+                {/* promptsColumn */}
                 {prompts.map((item) => (
                   <button
                     className="z-20"
-                    onClick={() => setPromptIndex(item.id)}
+                    onClick={() => setPrompt(item.id)}
                     key={item.id}
                   >
                     <img className="rounded-full" src={item.img} alt="" />
