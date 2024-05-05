@@ -72,22 +72,23 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
           )}
           {optionOpen && (
             <>
-              <div className="avatar mr-40">
+              <div className="avatar mr-2 md:mr-40">
                 <img
                   src={`${prompts[prompt].img}`}
-                  className="rounded-full"
+                  className="person rounded-full"
                   alt="choose ai"
                 />
+                <p className="absolute">{prompts[prompt].name}</p>
                 <button className="chooseAvatarBtn" onClick={handleChoose}>
                   <ArrowRight />
                   Выбрать
                 </button>
               </div>
-              <div className="grid grid-cols-2 gap-10">
+              <div className="grid grid-cols-2 gap-2 md:gap-4">
                 {/* promptsColumn */}
                 {prompts.map((item) => (
                   <button
-                    className="z-20"
+                    className="z-20 hover:bg-[rgba(0,0,0,0.2)] rounded-lg"
                     onClick={() => setPrompt(item.id)}
                     key={item.id}
                   >
@@ -95,8 +96,8 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
                   </button>
                 ))}
               </div>
-              <div className="rings"></div>
-              <div className="rings2"></div>
+              {/* <div className="rings"></div> */}
+              {/* <div className="rings2"></div> */}
             </>
           )}
         </div>
