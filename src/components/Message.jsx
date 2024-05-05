@@ -12,7 +12,7 @@ import { prompts } from "./prompts";
 // eslint-disable-next-line react/prop-types
 const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
   const [optionOpen, setOptionOpen] = useState(true);
-  const [prompt, setPrompt] = useState();
+  const [prompt, setPrompt] = useState(0);
 
   function handleChoose() {
     setPromptIndex(prompt);
