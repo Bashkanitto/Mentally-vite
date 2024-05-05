@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
-import Notification from "../components/Notification.jsx";
 
-function Welcome() {
+// eslint-disable-next-line react/prop-types
+function Welcome({ setActiveNotification }) {
   const [isModalOpen, setIsModalOpen] = useState();
 
   const handleSubmit = (e) => {
@@ -11,7 +11,6 @@ function Welcome() {
     if (userInput != "") {
       localStorage.setItem("user", userInput);
       setIsModalOpen(true);
-      Notification;
     }
   };
 
@@ -20,6 +19,9 @@ function Welcome() {
     const userInput = e.target[0].value;
     if (userInput != "") {
       window.location.href = "/chat";
+      setTimeout(() => {
+        setActiveNotification(true);
+      }, 3000);
     }
   };
 

@@ -41,20 +41,6 @@ const Chat = ({ promptIndex, setPromptIndex }) => {
     };
   }, [messages]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (promptIndex != 0) {
-        setMessages([
-          {
-            id: 1,
-            isMe: false,
-            text: `Доброго времени суток. Какие сложности или мысли занимают ваш разум сегодня?`,
-          },
-        ]);
-      }
-    }, 2000);
-  }, [promptIndex]);
-
   const scrollToBottom = () => {
     const scrollContainer = scrollContainerRef.current;
     if (scrollContainer) {

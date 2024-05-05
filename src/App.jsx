@@ -6,12 +6,21 @@ import { useState } from "react";
 
 function App() {
   const [promptIndex, setPromptIndex] = useState(0);
+  const [activeNotification, setActiveNotification] = useState(true);
 
   return (
     <>
-      <Sidebar promptIndex={promptIndex} setPromptIndex={setPromptIndex} />
+      <Sidebar
+        activeNotification={activeNotification}
+        setActiveNotification={setActiveNotification}
+        promptIndex={promptIndex}
+        setPromptIndex={setPromptIndex}
+      />
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route
+          path="/"
+          element={<Welcome setActiveNotification={setActiveNotification} />}
+        />
         <Route
           path="/chat"
           element={

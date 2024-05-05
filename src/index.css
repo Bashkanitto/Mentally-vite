@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 html{
   scroll-behavior: smooth;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: "DM Sans", sans-serif
 }
 
 :root {
@@ -238,8 +240,8 @@ footer .btns{
 }
 
 .chat img{
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   margin: 15px;
 }
 

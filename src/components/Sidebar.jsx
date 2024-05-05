@@ -3,9 +3,15 @@ import { ChevronLeft, ChevronRight, Trophy } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Footer } from "./Footer";
 import CustomSelect from "./CustomSelect";
+import Notification from "./Notification";
 
 // eslint-disable-next-line react/prop-types
-const Sidebar = ({ setPromptIndex, promptIndex }) => {
+const Sidebar = ({
+  setActiveNotification,
+  activeNotification,
+  setPromptIndex,
+  promptIndex,
+}) => {
   const [isOpen, setIsOpen] = useState(true);
   const [user] = useState(localStorage.getItem("user"));
   let isAuthorized = user != "null";
@@ -80,7 +86,7 @@ const Sidebar = ({ setPromptIndex, promptIndex }) => {
           <nav>
             <ul className="flex flex-col gap-10">
               <li>
-                <a href="/techWorks">
+                <a href="#">
                   <Trophy />
                   Достижения
                 </a>
@@ -108,6 +114,12 @@ const Sidebar = ({ setPromptIndex, promptIndex }) => {
           {isAuthorized && <Footer />}
         </div>
       </div>
+
+      {/* notification */}
+      <Notification
+        setActiveNotification={setActiveNotification}
+        activeNotification={activeNotification}
+      />
     </>
   );
 };
