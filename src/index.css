@@ -1,0 +1,376 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --background-start-rgb: white;
+  --background-end-rgb:#D2DCFF;
+  --background-sidebar: #3B383ECC;
+  --background-violet: #7061D0;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      var(--background-start-rgb),
+      var(--background-end-rgb)
+    )
+}
+
+h1{
+  font-size: 90px;
+  font-weight: bold;
+}
+h2{
+  font-size: 22px;
+}
+a{
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+  font-size: 14px;
+}
+button{
+  font-size: 13px;
+}
+p{
+  font-size: 14px;
+}
+span{
+  font-size: 14px;
+}
+li{
+  display: flex;
+}
+svg{
+  width: 15px;
+}
+.secondary{
+  color: grey;
+}
+
+.t-12{
+  font-size: 12;
+}
+
+
+.mobileButton{
+  transition: 0.5s;
+  height:28px;
+  border-radius: 0 5px 5px 0;
+
+}
+
+
+/* sidebar */
+.sidebar{
+  width: 232px;
+  z-index: 20;
+  height: 100vh;
+  
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  color: white;
+  border-radius: 0 15px 15px 0;
+  /* background: var( --background-sidebar); */
+  transition: 0.5s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 40px 12px 12px;
+}
+
+
+.sidebar .menuButton{
+  position: absolute;
+  top: 20px;
+  right: 0;
+  height:28px;
+  background: #19191980;
+
+  border-radius: 5px 0 0 5px;
+}
+
+.sidebar .notes{
+  display: flex;
+  flex-direction: column;
+   gap:5px;
+}
+
+
+/* notes */
+.sidebar .notes{
+  margin-bottom: 40px;
+}
+
+
+/* footer */
+footer{
+  position: absolute;
+  bottom:8px;
+  left: 8px;
+  width: 210px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: white;
+  padding: 4px 12px;
+
+  border-radius: 10px;
+}
+
+footer .btns{
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+
+
+/* main */
+.main{
+  height: 100vh;
+
+  background: url('/imgHero-bg.png') center;
+  background-size: cover;
+  padding-top: 150px;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main .introButton {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  border: 1px solid white;
+  border-radius: 10px;
+
+  padding: 5px 10px;
+}
+
+.main h2{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+.main input{
+  width: 300px;
+  height: 42px;
+
+  background: #FFFFFF33;
+  
+  padding: 9px 12px;
+
+  border-radius: 10px;
+  color: white;
+  outline: none;
+}
+
+.modal input{
+  outline: none;
+  font-size: 12px;
+  padding: 5px 20px ;
+  width: 100%;
+}
+
+.modal button {
+  padding: 10px 20px;
+}
+
+.main input::placeholder{
+  color: #FFFFFF80;
+}
+
+.main .startBtn{
+  padding: 5px 10px;
+  background: white;
+  color: black;
+
+  border-radius: 10px;
+}
+
+.main form{
+  display: flex;
+  gap: 8px;
+}
+ 
+/* chat */
+.chat{
+  position: relative;
+  width: 60%;
+  height: 100vh;
+  margin:0 auto ;
+
+}
+
+.chat .messages{
+  height: 90vh;
+  overflow: scroll;
+
+  scrollbar-width: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.chat img{
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+}
+
+.chat p{
+  font-size: 12px;
+}
+
+.chat .inputs{
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+
+  display: flex;
+  align-items: end;
+  gap: 10px;
+
+  color: white;
+}
+
+.chat .inputs input{
+  width: 100%;
+  padding: 5px 10px;
+
+  border-radius: 5px;
+  color: black;
+}
+
+.chat .inputs button{
+  padding: 7px 10px;
+  border-radius: 5px;
+  background: var(--background-violet);
+}
+
+.chat .inputs .mic{
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: var(--background-violet);
+}
+
+
+/* message */
+.message{
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.message p{
+  max-width: 85%;
+}
+
+
+
+/* option */
+.option{
+  width: 85%;
+
+  max-height: 300px;
+
+  border: 1px solid grey;
+  border-radius: 15px;
+  transition: 0.5s;
+  margin: 0px auto;
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.option .avatar{
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.option .avatar img{
+  border-radius: 100%;
+  border: 1px dashed black;
+  filter: brightness(40%);
+  width: 100%;
+  height: 100%;
+}
+
+.option .chooseAvatarBtn{
+  z-index: 2;
+  display: flex;
+  align-items: center; 
+  gap: 5px;
+  background: var(--background-violet);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.option .rings{
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  border: 1px dashed black;
+  border-radius: 100%;
+  background: transparent;
+  width: 500px;
+  height: 500px;
+}
+
+.option .rings2{
+  position: absolute;
+  top: -150px;
+  left: -50px;
+  border: 1px dashed black;
+  border-radius: 100%;
+  background: transparent;
+  width: 600px;
+  height: 600px;
+}
+
+
+@media screen and (max-width:700px) {
+  .main h2{
+    width: 50%;
+  }
+  .chat{
+    width: 90%;
+  }
+  
+}
