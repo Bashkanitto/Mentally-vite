@@ -62,7 +62,7 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
             background: optionOpen ? "transparent" : "#7061D0",
             color: "white",
           }}
-          className="option"
+          className="option w-full md:w-[85%]"
         >
           {!optionOpen && (
             <p className="flex items-center">
