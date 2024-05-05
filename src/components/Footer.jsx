@@ -7,6 +7,7 @@ export const Footer = () => {
 
   function logOut() {
     localStorage.setItem("user", "null");
+    localStorage.removeItem("messages");
     window.location.href = "/";
   }
 
