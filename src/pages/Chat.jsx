@@ -2,6 +2,7 @@ import axios from "axios";
 import { ArrowRight, Mic } from "lucide-react";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Message from "../components/Message";
+import Notification from "../components/Notification.jsx";
 import { prompts } from "../components/prompts.js";
 
 // eslint-disable-next-line react/prop-types
@@ -113,6 +114,7 @@ const Chat = ({ promptIndex, setPromptIndex }) => {
           </button>
         </form>
       </div>
+      <Notification />
     </Suspense>
   );
 };
