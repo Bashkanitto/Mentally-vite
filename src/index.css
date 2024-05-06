@@ -37,6 +37,8 @@ h2{
 }
 a{
   display: flex;
+
+  transition: 0.5s;
   align-items: center;
 
   gap: 5px;
@@ -96,6 +98,10 @@ svg{
   padding: 40px 12px 12px;
 }
 
+.sidebar nav ul li a:hover{
+  transform: translateX(5px);
+  transition: 0.5s;
+}
 
 .sidebar .menuButton{
   position: absolute;
@@ -341,6 +347,13 @@ footer .btns{
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
+}
+.menuItem{
+  transition: 0.5s;
+}
+ .menuItem:hover{
+  transform: translateX(5px);
+  transition: 0.5s;
 }
 
 .option .rings{

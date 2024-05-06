@@ -38,7 +38,7 @@ const CustomSelect = ({ setPromptIndex, promptIndex, isAuthorized }) => {
               setPromptIndex(item.id);
               setIsOpen(false);
             }}
-            className="flex items-center gap-2 text-xs cursor-pointer"
+            className="menuItem flex items-center gap-2 text-xs cursor-pointer"
             key={item.id}
           >
             <img
