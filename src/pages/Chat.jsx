@@ -3,13 +3,25 @@ import { ArrowRight, Mic } from "lucide-react";
 import { Suspense, useEffect, useRef, useState } from "react";
 import Message from "../components/Message";
 import { prompts } from "../components/prompts.js";
+import Notification from "../components/Notification.jsx";
 
 // eslint-disable-next-line react/prop-types
-const Chat = ({ promptIndex, setPromptIndex }) => {
+const Chat = ({
+  setActiveNotification,
+  activeNotification,
+  promptIndex,
+  setPromptIndex,
+}) => {
   const [user] = useState(localStorage.getItem("user"));
   const scrollContainerRef = useRef(null);
 
   const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setActiveNotification(true);
+    }, 4000);
+  }, []);
 
   useEffect(() => {
     const storedMessages = localStorage.getItem("messages");
@@ -117,6 +129,10 @@ const Chat = ({ promptIndex, setPromptIndex }) => {
           </button>
         </form>
       </div>
+      <Notification
+        setActiveNotification={setActiveNotification}
+        activeNotification={activeNotification}
+      />
     </Suspense>
   );
 };

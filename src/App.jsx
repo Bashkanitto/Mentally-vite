@@ -3,30 +3,29 @@ import Sidebar from "./components/Sidebar";
 import Welcome from "./pages/Welcome";
 import Chat from "./pages/Chat";
 import { useState } from "react";
+import TechWorks from "./pages/TechWorks";
 
 function App() {
   const [promptIndex, setPromptIndex] = useState(0);
-  const [activeNotification, setActiveNotification] = useState(true);
+  const [activeNotification, setActiveNotification] = useState(false);
 
   return (
     <>
-      <Sidebar
-        activeNotification={activeNotification}
-        setActiveNotification={setActiveNotification}
-        promptIndex={promptIndex}
-        setPromptIndex={setPromptIndex}
-      />
+      <Sidebar promptIndex={promptIndex} setPromptIndex={setPromptIndex} />
       <Routes>
-        <Route
-          path="/"
-          element={<Welcome setActiveNotification={setActiveNotification} />}
-        />
+        <Route path="/" element={<Welcome />} />
         <Route
           path="/chat"
           element={
-            <Chat promptIndex={promptIndex} setPromptIndex={setPromptIndex} />
+            <Chat
+              setActiveNotification={setActiveNotification}
+              activeNotification={activeNotification}
+              promptIndex={promptIndex}
+              setPromptIndex={setPromptIndex}
+            />
           }
         />
+        <Route path="/techWorks" element={<TechWorks />} />
       </Routes>
     </>
   );

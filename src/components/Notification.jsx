@@ -7,7 +7,7 @@ const Notification = ({ setActiveNotification, activeNotification }) => {
       style={{
         transform: activeNotification
           ? "translateX(0px)"
-          : "translateX(-400px)",
+          : "translateX(-300px)",
       }}
       className=" duration-200 absolute top-1/2 z-20 text-white left-0 w-[300px] bg-[#7061D0] p-4"
     >
