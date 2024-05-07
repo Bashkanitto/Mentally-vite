@@ -33,7 +33,8 @@ const CustomSelect = ({ setPromptIndex, promptIndex, isAuthorized }) => {
         className="absolute top-[50px] left-4 rounded-md bg-[#e4e0ff] z-40 flex flex-col gap-2 p-2"
       >
         {prompts.map((item) => (
-          <div
+          <button
+            disabled={item.disabled}
             onClick={() => {
               setPromptIndex(item.id);
               setIsOpen(false);
@@ -48,7 +49,7 @@ const CustomSelect = ({ setPromptIndex, promptIndex, isAuthorized }) => {
               alt={item.name}
             />
             {item.name}
-          </div>
+          </button>
         ))}
       </div>
     </>

@@ -100,7 +100,7 @@ const Chat = ({
 
   return (
     <Suspense fallback={"loading..."}>
-      <div className="chat">
+      <div className="chat w-full">
         <div className="messages" ref={scrollContainerRef}>
           {messages.map((item) => (
             <Message

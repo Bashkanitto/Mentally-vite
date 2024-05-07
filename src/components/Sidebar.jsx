@@ -6,7 +6,9 @@ import CustomSelect from "./CustomSelect";
 
 // eslint-disable-next-line react/prop-types
 const Sidebar = ({ setPromptIndex, promptIndex }) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(
+    localStorage.getItem("user") == "null" ? true : false
+  );
   const [user] = useState(localStorage.getItem("user"));
   let isAuthorized = user != "null";
 

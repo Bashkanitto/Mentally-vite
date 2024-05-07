@@ -35,7 +35,7 @@ function Welcome() {
         <form
           onSubmit={handleEmail}
           style={{ display: isModalOpen ? "flex" : "none" }}
-          className="modal flex flex-col justify-center items-center p-4 top-1/3 left-[40%] rounded-xl bg-white w-60 h-60"
+          className="modal flex flex-col justify-center items-center p-4 top-1/3 left-[40%] rounded-xl bg-white  m-2 w-full md:w-60 h-60"
         >
           <h2>Авторизация</h2>
           <input

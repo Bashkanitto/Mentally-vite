@@ -44,14 +44,10 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
       >
         <img
           src={isMe ? "/me.png" : `${prompts[promptIndex].img}`}
-          className="rounded-full"
+          className="rounded-full hidden md:flex"
           alt="AI avatar"
         />
-        {localStorage.getItem("animation") == "true" ? (
-          <p className="text-[14px]">{text}</p>
-        ) : (
-          <span className="text-[14px]" ref={elRef} />
-        )}
+        <span className="text-[14px]" ref={elRef} />
       </div>
 
       {/* option */}
@@ -65,7 +61,7 @@ const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
           className="option w-full md:w-[85%]"
         >
           {!optionOpen && (
-            <p className="flex items-center">
+            <p className="flex items-center text-xs">
               Вы выбрали понимающего собеседника, вы можете переключиться в
               любой момент <ArrowLeft />
             </p>

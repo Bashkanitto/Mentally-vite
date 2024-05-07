@@ -201,6 +201,7 @@ footer .btns{
   outline: none;
   font-size: 12px;
   padding: 5px 20px ;
+  background-color: transparent;
   width: 100%;
 }
 
