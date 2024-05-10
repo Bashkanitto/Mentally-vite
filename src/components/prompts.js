@@ -48,7 +48,7 @@ export const prompts = [
   },
   {
     id: 3,
-    img: "/imgGermiona.jpg",
+    img: "/imgGermiona.jpeg",
     name: "Гермиона",
     disabled: false,
     prompt:
