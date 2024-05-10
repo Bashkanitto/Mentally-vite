@@ -82,13 +82,13 @@ const Chat = ({
     e.target[0].value = "";
   };
 
-  const handleSendMessage = async (e) => {
+  const handleSendMessage = async (e, text) => {
     const prompt = prompts[promptIndex].prompt;
     try {
       const response = await axios.post(
         "https://gpt-backend-production.up.railway.app/api/request",
         {
-          prompt: `${prompt}, вот промпт - ${e.target[0].value}`,
+          prompt: text ? text : `${prompt}, вот промпт - ${e.target[0].value}`,
         }
       );
       const receivedAnswer = response.data.choices[0].message.content;
@@ -104,6 +104,8 @@ const Chat = ({
         <div className="messages" ref={scrollContainerRef}>
           {messages.map((item) => (
             <Message
+              handleSendMessage={handleSendMessage}
+              addMessage={addMessage}
               setPromptIndex={setPromptIndex}
               promptIndex={promptIndex}
               key={item.id}

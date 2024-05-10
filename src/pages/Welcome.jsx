@@ -20,6 +20,7 @@ function Welcome() {
     const userInput = e.target[0].value;
     if (userInput != "") {
       window.location.href = "/chat";
+      localStorage.removeItem("messages");
       setTimeout(() => {}, 3000);
     }
   };

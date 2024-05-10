@@ -10,11 +10,25 @@ import { Typed } from "react-typed";
 import { prompts } from "./prompts";
 
 // eslint-disable-next-line react/prop-types
-const Message = ({ promptIndex, setPromptIndex, isMe, text, option }) => {
+const Message = ({
+  addMessage,
+  handleSendMessage,
+  promptIndex,
+  setPromptIndex,
+  isMe,
+  text,
+  option,
+}) => {
   const [optionOpen, setOptionOpen] = useState(true);
   const [prompt, setPrompt] = useState(0);
 
-  function handleChoose() {
+  async function handleChoose() {
+    const gptResponse = await handleSendMessage(
+      "",
+      `ты ${prompts[promptIndex].prompt} поприветствуй пользователя`
+    );
+    console.log(gptResponse);
+    addMessage(gptResponse, false);
     setPromptIndex(prompt);
     setOptionOpen(false);
     option = false;
