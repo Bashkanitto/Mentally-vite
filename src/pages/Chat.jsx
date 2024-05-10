@@ -32,7 +32,7 @@ const Chat = ({
         {
           id: 1,
           isMe: false,
-          text: `Отлично, ${user}! Теперь у меня есть возможность подстроиться под Ваши предпочтения. Выберите мне один из образов, который больше всего Вам подхойдет, и я буду общаться с Вами в этом стиле: `,
+          text: `Отлично, ${user}! Теперь у меня есть возможность подстроиться под Ваши предпочтения. Выберите мне один из образов, который больше всего Вам подойдет, и я буду общаться с Вами в этом стиле: `,
           option: true,
         },
       ]);
@@ -104,7 +104,6 @@ const Chat = ({
         <div className="messages" ref={scrollContainerRef}>
           {messages.map((item) => (
             <Message
-              handleSendMessage={handleSendMessage}
               addMessage={addMessage}
               setPromptIndex={setPromptIndex}
               promptIndex={promptIndex}

@@ -12,7 +12,6 @@ import { prompts } from "./prompts";
 // eslint-disable-next-line react/prop-types
 const Message = ({
   addMessage,
-  handleSendMessage,
   promptIndex,
   setPromptIndex,
   isMe,
@@ -23,12 +22,7 @@ const Message = ({
   const [prompt, setPrompt] = useState(0);
 
   async function handleChoose() {
-    const gptResponse = await handleSendMessage(
-      "",
-      `ты ${prompts[promptIndex].prompt} поприветствуй пользователя`
-    );
-    console.log(gptResponse);
-    addMessage(gptResponse, false);
+    addMessage("Приветствую, чем могу помочь?", false);
     setPromptIndex(prompt);
     setOptionOpen(false);
     option = false;
