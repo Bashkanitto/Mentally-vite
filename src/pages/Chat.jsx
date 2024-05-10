@@ -130,6 +130,9 @@ const Chat = ({
         </form>
       </div>
       <Notification
+        text={
+          "Пока вас не было, подготовил пару практических советов по улучшению навыков общения и выражения..."
+        }
         setActiveNotification={setActiveNotification}
         activeNotification={activeNotification}
       />

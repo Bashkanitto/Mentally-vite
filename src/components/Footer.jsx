@@ -2,7 +2,7 @@ import { LogOut, Settings } from "lucide-react";
 import { useState } from "react";
 
 export const Footer = () => {
-  const [user, setUser] = useState(localStorage.getItem("user"));
+  const [user] = useState(localStorage.getItem("user"));
   const isAuthorized = user != "null";
 
   function logOut() {
@@ -20,9 +20,9 @@ export const Footer = () => {
     >
       <p>{user}</p>
       <div className="btns">
-        <button>
+        <a href="/settings">
           <Settings />
-        </button>
+        </a>
         <button onClick={logOut}>
           <LogOut />
         </button>

@@ -82,6 +82,12 @@ const Sidebar = ({ setPromptIndex, promptIndex }) => {
           <nav>
             <ul className="flex flex-col gap-10">
               <li>
+                <a href="/chat">
+                  <Trophy />
+                  Чат
+                </a>
+              </li>
+              <li>
                 <a href="/techWorks">
                   <Trophy />
                   Достижения
@@ -93,6 +99,7 @@ const Sidebar = ({ setPromptIndex, promptIndex }) => {
                   Полезные ресурсы
                 </a>
               </li>
+
               <li>
                 <a href="/techWorks">
                   <Trophy />

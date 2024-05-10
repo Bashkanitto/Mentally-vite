@@ -4,6 +4,7 @@ import Welcome from "./pages/Welcome";
 import Chat from "./pages/Chat";
 import { useState } from "react";
 import TechWorks from "./pages/TechWorks";
+import SettingsPage from "./pages/SettingsPage";
 
 function App() {
   const [promptIndex, setPromptIndex] = useState(0);
@@ -26,6 +27,7 @@ function App() {
           }
         />
         <Route path="/techWorks" element={<TechWorks />} />
+        <Route path="/settings" element={<SettingsPage />} />
       </Routes>
     </>
   );
