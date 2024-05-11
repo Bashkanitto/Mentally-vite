@@ -1,5 +1,13 @@
 "use client";
-import { ChevronLeft, ChevronRight, Trophy } from "lucide-react";
+import {
+  BriefcaseBusiness,
+  ChevronLeft,
+  ChevronRight,
+  CircleDollarSign,
+  Lightbulb,
+  MessageCircle,
+  Trophy,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { Footer } from "./Footer";
 import CustomSelect from "./CustomSelect";
@@ -83,7 +91,7 @@ const Sidebar = ({ setPromptIndex, promptIndex }) => {
             <ul className="flex flex-col gap-10">
               <li>
                 <a href="/chat">
-                  <Trophy />
+                  <MessageCircle />
                   Чат
                 </a>
               </li>
@@ -95,20 +103,20 @@ const Sidebar = ({ setPromptIndex, promptIndex }) => {
               </li>
               <li>
                 <a href="/techWorks">
-                  <Trophy />
+                  <Lightbulb />
                   Полезные ресурсы
                 </a>
               </li>
 
               <li>
                 <a href="/techWorks">
-                  <Trophy />
+                  <CircleDollarSign />
                   Тарифы и цены
                 </a>
               </li>
               <li>
                 <a href="/techWorks">
-                  <Trophy />
+                  <BriefcaseBusiness />
                   Подобрать специалиста
                 </a>
               </li>
