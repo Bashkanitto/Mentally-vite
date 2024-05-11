@@ -19,8 +19,8 @@ function Welcome() {
     e.preventDefault();
     const userInput = e.target[0].value;
     if (userInput != "") {
-      window.location.href = "/chat";
       localStorage.removeItem("messages");
+      window.location.href = "/chat";
       setTimeout(() => {}, 3000);
     }
   };
